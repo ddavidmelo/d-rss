@@ -1,0 +1,26 @@
+{
+  "name": "p-rss",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.9",
+    "fast-xml-parser": "^4.3.2",
+    "firebase": "^10.7.1",
+    "quasar": "^2.14.1",
+    "vue": "^3.3.8"
+  },
+  "devDependencies": {
+    "@quasar/vite-plugin": "^1.6.0",
+    "@vitejs/plugin-vue": "^4.5.0",
+    "sass": "^1.69.5",
+    "sass-loader": "^12.0.0",
+    "vite": "^5.0.0",
+    "vite-plugin-pwa": "^0.17.4"
+  },
+  "type": "module"
+}

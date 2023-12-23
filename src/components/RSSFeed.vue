@@ -40,7 +40,7 @@ export default {
   data() {
     return {
       items: {},
-      site: "https://dmelo.eu/index.xml"
+      site: import.meta.env.VITE_API_URL
     }
   },
   mounted() {

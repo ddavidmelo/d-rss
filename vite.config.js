@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { VitePWA } from 'vite-plugin-pwa';
-import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
+import { quasar } from '@quasar/vite-plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,17 +10,17 @@ export default defineConfig({
     vue(),
     VitePWA({
       mode: 'development',
-      includeAssets: ['/favicon.ico'],
+      injectManifest: {
+        globPatterns: ['**/*'],
+      },
       strategies: 'injectManifest',
       srcDir: 'public',
       filename: 'firebase-messaging-sw.js',
-      base: '/d-rss',
+      base: '/d-rss/',
       manifest: {
         name: 'D-RSS',
         short_name: 'D-RSS',
         theme_color: '#06091c',
-        start_url: '/d-rss',
-        // start_url: '/',
         display: 'standalone',
         background_color: '#06091c',
         icons: [

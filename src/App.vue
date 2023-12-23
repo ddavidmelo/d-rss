@@ -11,7 +11,19 @@
 
 
     <q-page-container>
-      <RSSFeed />
+      <RSSFeed v-if="checkConnection" />
+      <q-dialog v-model="checkConnectionOffline">
+        <q-card>
+          <q-card-section class="row items-center">
+            <q-avatar icon="signal_wifi_off" color="primary" text-color="white" />
+            <span class="q-ml-sm">You are currently not connected to any network.</span>
+          </q-card-section>
+
+          <q-card-actions align="right">
+            <q-btn flat label="OK" color="primary" v-close-popup />
+          </q-card-actions>
+        </q-card>
+      </q-dialog>
     </q-page-container>
   </q-layout>
 </template>
@@ -27,10 +39,12 @@ export default {
   },
   data() {
     return {
-      deferredPrompt: null
+      deferredPrompt: null,
+      checkConnection: navigator.onLine,
+      checkConnectionOffline: !navigator.onLine, 
     };
   },
-  setup () {
+  setup() {
     return {
     }
   },
